@@ -38,11 +38,14 @@
             this.tbGraviton1 = new System.Windows.Forms.TrackBar();
             this.tbGraviton2 = new System.Windows.Forms.TrackBar();
             this.tbSpeed = new System.Windows.Forms.TrackBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbSpreading = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpreading)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -53,7 +56,7 @@
             // 
             this.picDisplay.Location = new System.Drawing.Point(12, 12);
             this.picDisplay.Name = "picDisplay";
-            this.picDisplay.Size = new System.Drawing.Size(1451, 762);
+            this.picDisplay.Size = new System.Drawing.Size(975, 762);
             this.picDisplay.TabIndex = 0;
             this.picDisplay.TabStop = false;
             this.picDisplay.Click += new System.EventHandler(this.picDisplay_Click);
@@ -67,7 +70,7 @@
             // 
             // tbDirection
             // 
-            this.tbDirection.Location = new System.Drawing.Point(12, 812);
+            this.tbDirection.Location = new System.Drawing.Point(1002, 40);
             this.tbDirection.Maximum = 359;
             this.tbDirection.Name = "tbDirection";
             this.tbDirection.Size = new System.Drawing.Size(377, 80);
@@ -77,7 +80,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 784);
+            this.label1.Location = new System.Drawing.Point(1002, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 25);
             this.label1.TabIndex = 2;
@@ -86,7 +89,7 @@
             // lblDirection
             // 
             this.lblDirection.AutoSize = true;
-            this.lblDirection.Location = new System.Drawing.Point(395, 812);
+            this.lblDirection.Location = new System.Drawing.Point(1385, 56);
             this.lblDirection.Name = "lblDirection";
             this.lblDirection.Size = new System.Drawing.Size(0, 25);
             this.lblDirection.TabIndex = 3;
@@ -111,20 +114,40 @@
             // 
             // tbSpeed
             // 
-            this.tbSpeed.Location = new System.Drawing.Point(1196, 812);
+            this.tbSpeed.Location = new System.Drawing.Point(1002, 134);
             this.tbSpeed.Maximum = 100;
             this.tbSpeed.Minimum = 2;
             this.tbSpeed.Name = "tbSpeed";
-            this.tbSpeed.Size = new System.Drawing.Size(142, 80);
+            this.tbSpeed.Size = new System.Drawing.Size(377, 80);
             this.tbSpeed.TabIndex = 6;
             this.tbSpeed.Value = 2;
             this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1002, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Скорость";
+            // 
+            // tbSpreading
+            // 
+            this.tbSpreading.Location = new System.Drawing.Point(1002, 220);
+            this.tbSpreading.Maximum = 360;
+            this.tbSpreading.Name = "tbSpreading";
+            this.tbSpreading.Size = new System.Drawing.Size(362, 80);
+            this.tbSpreading.TabIndex = 8;
+            this.tbSpreading.Scroll += new System.EventHandler(this.tbSpreading_Scroll);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1475, 979);
+            this.Controls.Add(this.tbSpreading);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbSpeed);
             this.Controls.Add(this.tbGraviton2);
             this.Controls.Add(this.tbGraviton1);
@@ -140,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpreading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,6 +180,8 @@
         private System.Windows.Forms.TrackBar tbGraviton1;
         private System.Windows.Forms.TrackBar tbGraviton2;
         private System.Windows.Forms.TrackBar tbSpeed;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar tbSpreading;
     }
 }
 

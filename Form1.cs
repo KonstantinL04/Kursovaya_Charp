@@ -116,5 +116,10 @@ namespace Kursovaya
         {
             emitter.Speed= tbSpeed.Value;
         }
+
+        private void tbSpreading_Scroll(object sender, EventArgs e)
+        {
+            emitter.Spreading= tbSpreading.Value;
+        }
     }
 }
