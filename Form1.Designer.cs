@@ -37,10 +37,12 @@
             this.lblDirection = new System.Windows.Forms.Label();
             this.tbGraviton1 = new System.Windows.Forms.TrackBar();
             this.tbGraviton2 = new System.Windows.Forms.TrackBar();
+            this.tbSpeed = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -107,11 +109,23 @@
             this.tbGraviton2.TabIndex = 5;
             this.tbGraviton2.Scroll += new System.EventHandler(this.tbGraviton2_Scroll);
             // 
+            // tbSpeed
+            // 
+            this.tbSpeed.Location = new System.Drawing.Point(1196, 812);
+            this.tbSpeed.Maximum = 100;
+            this.tbSpeed.Minimum = 2;
+            this.tbSpeed.Name = "tbSpeed";
+            this.tbSpeed.Size = new System.Drawing.Size(142, 80);
+            this.tbSpeed.TabIndex = 6;
+            this.tbSpeed.Value = 2;
+            this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1475, 979);
+            this.Controls.Add(this.tbSpeed);
             this.Controls.Add(this.tbGraviton2);
             this.Controls.Add(this.tbGraviton1);
             this.Controls.Add(this.lblDirection);
@@ -125,6 +139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +155,7 @@
         private System.Windows.Forms.Label lblDirection;
         private System.Windows.Forms.TrackBar tbGraviton1;
         private System.Windows.Forms.TrackBar tbGraviton2;
+        private System.Windows.Forms.TrackBar tbSpeed;
     }
 }
 

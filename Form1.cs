@@ -29,8 +29,9 @@ namespace Kursovaya
             {
                 Direction = 0,
                 Spreading = 10,
-                SpeedMin = 10,
-                SpeedMax = 10,
+                Speed = 10,
+              //  SpeedMin = 10,
+              //  SpeedMax = 10,
                 ColorFrom = Color.Gold,
                 ColorTo = Color.FromArgb(0, Color.Red),
                 ParticlesPerTick = 10,
@@ -97,7 +98,6 @@ namespace Kursovaya
         private void tbDirection_Scroll(object sender, EventArgs e)
         {
             emitter.Direction = tbDirection.Value;
-            emitter.Direction = tbDirection.Value;
             lblDirection.Text = $"{tbDirection.Value}°";
         }
 
@@ -110,6 +110,11 @@ namespace Kursovaya
         private void tbGraviton2_Scroll(object sender, EventArgs e)
         {
             point2.Power= tbGraviton2.Value;
+        }
+
+        private void tbSpeed_Scroll(object sender, EventArgs e)
+        {
+            emitter.Speed= tbSpeed.Value;
         }
     }
 }
