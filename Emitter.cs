@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Kursovaya.Particle;
 
 namespace Kursovaya
@@ -12,12 +9,10 @@ namespace Kursovaya
     {
         public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
         List<Particle> particles = new List<Particle>();
-        public int MousePositionX;
-        public int MousePositionY;
         public float GravitationX = 0;
         public float GravitationY = 1;
-        public int X; // координата X центра эмиттера, будем ее использовать вместо MousePositionX
-        public int Y; // соответствующая координата Y 
+        public int X; 
+        public int Y; 
         public int Direction = 0; // вектор направления в градусах куда сыпет эмиттер
         public int Spreading = 360; // разброс частиц относительно Direction
         public int Speed = 25;
@@ -26,13 +21,9 @@ namespace Kursovaya
         public int RadiusMin = 2; // минимальный радиус частицы
         public int RadiusMax = 10; // максимальный радиус частицы
         public int Life = 100;
-        //public int LifeMin = 20; // минимальное время жизни частицы
-        //public int LifeMax = 100; // максимальное время жизни частицы
         public int ParticlesPerTick = 1; // добавил новое поле
         public Color ColorFrom = Color.White; // начальный цвет частицы
         public Color ColorTo = Color.FromArgb(0, Color.Black); // конечный цвет частиц
-    //    public int ParticlesCount = 2000;
-
         public void UpdateState()
         {
             int particlesToCreate = ParticlesPerTick;
@@ -40,13 +31,9 @@ namespace Kursovaya
             {
                 if (particle.Life <= 0) // если частицы умерла
                 {
-                    /* 
-                     * то проверяем надо ли создать частицу
-                     */
                     if (particlesToCreate > 0)
                     {
-                        /* у нас как сброс частицы равносилен созданию частицы */
-                        particlesToCreate -= 1; // поэтому уменьшаем счётчик созданных частиц на 1
+                        particlesToCreate -= 1; 
                         ResetParticle(particle);
                     }
                 }
@@ -60,7 +47,6 @@ namespace Kursovaya
                     {
                         point.ImpactParticle(particle);
                     }
-
                     particle.SpeedX += GravitationX;
                     particle.SpeedY += GravitationY;
                 }
@@ -72,12 +58,9 @@ namespace Kursovaya
                 ResetParticle(particle);
                 particles.Add(particle);
             }
-        }
-        // добавил новый метод, виртуальным, чтобы переопределять можно было
-        
+        }        
         public virtual void ResetParticle(Particle particle)
         {
-            //particle.Life = Particle.rand.Next(LifeMin, LifeMax);
             particle.Life = Particle.rand.Next(Life);
             particle.X = X;
             particle.Y = Y;
@@ -87,8 +70,6 @@ namespace Kursovaya
                 - Spreading / 2;
             
             var speed = Particle.rand.Next(Speed);
-         //   var speed = Particle.rand.Next(SpeedMin, SpeedMax);
-
             particle.SpeedX = (float)(Math.Cos(direction / 180 * Math.PI) * speed);
             particle.SpeedY = -(float)(Math.Sin(direction / 180 * Math.PI) * speed);
 
@@ -102,17 +83,12 @@ namespace Kursovaya
 
             return particle;
         }
-
-
         public void Render(Graphics g)
         {
-            // ну тут так и быть уж сам впишу...
-            // это то же самое что на форме в методе Render
             foreach (var particle in particles)
             {
                 particle.Draw(g);
             }
-            // рисую точки притяжения красными кружочками
             foreach (var point in impactPoints)
             {
                 point.Render(g);

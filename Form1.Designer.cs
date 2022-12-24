@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbParticleLife = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblCountParticles = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
@@ -62,8 +63,6 @@
             this.picDisplay.Size = new System.Drawing.Size(1064, 794);
             this.picDisplay.TabIndex = 0;
             this.picDisplay.TabStop = false;
-            this.picDisplay.Click += new System.EventHandler(this.picDisplay_Click);
-            this.picDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDisplay_MouseMove);
             // 
             // timer1
             // 
@@ -122,7 +121,7 @@
             this.tbSpreading.Location = new System.Drawing.Point(1093, 229);
             this.tbSpreading.Maximum = 360;
             this.tbSpreading.Name = "tbSpreading";
-            this.tbSpreading.Size = new System.Drawing.Size(395, 90);
+            this.tbSpreading.Size = new System.Drawing.Size(418, 90);
             this.tbSpreading.TabIndex = 8;
             this.tbSpreading.Scroll += new System.EventHandler(this.tbSpreading_Scroll);
             // 
@@ -141,7 +140,7 @@
             this.tbParticlesCount.Maximum = 100;
             this.tbParticlesCount.Minimum = 1;
             this.tbParticlesCount.Name = "tbParticlesCount";
-            this.tbParticlesCount.Size = new System.Drawing.Size(389, 90);
+            this.tbParticlesCount.Size = new System.Drawing.Size(418, 90);
             this.tbParticlesCount.TabIndex = 10;
             this.tbParticlesCount.Value = 1;
             this.tbParticlesCount.Scroll += new System.EventHandler(this.tbParticlesCount_Scroll);
@@ -151,9 +150,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(1093, 279);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 25);
+            this.label4.Size = new System.Drawing.Size(259, 25);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Количество частиц";
+            this.label4.Text = "Количество частиц в тик";
             // 
             // tbParticleLife
             // 
@@ -161,7 +160,7 @@
             this.tbParticleLife.Maximum = 150;
             this.tbParticleLife.Minimum = 20;
             this.tbParticleLife.Name = "tbParticleLife";
-            this.tbParticleLife.Size = new System.Drawing.Size(384, 90);
+            this.tbParticleLife.Size = new System.Drawing.Size(411, 90);
             this.tbParticleLife.TabIndex = 12;
             this.tbParticleLife.Value = 20;
             this.tbParticleLife.Scroll += new System.EventHandler(this.tbParticleLife_Scroll);
@@ -175,11 +174,20 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Продолжительность жизни";
             // 
+            // lblCountParticles
+            // 
+            this.lblCountParticles.AutoSize = true;
+            this.lblCountParticles.Location = new System.Drawing.Point(1109, 458);
+            this.lblCountParticles.Name = "lblCountParticles";
+            this.lblCountParticles.Size = new System.Drawing.Size(0, 25);
+            this.lblCountParticles.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1609, 1020);
+            this.Controls.Add(this.lblCountParticles);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbParticleLife);
             this.Controls.Add(this.label4);
@@ -194,7 +202,6 @@
             this.Controls.Add(this.picDisplay);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
@@ -222,6 +229,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TrackBar tbParticleLife;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblCountParticles;
     }
 }
 
