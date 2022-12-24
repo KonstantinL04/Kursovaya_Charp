@@ -29,7 +29,8 @@ namespace Kursovaya
             {
                 Direction = 0,
                 Spreading = 10,
-                Speed = 10,
+                Speed = 25,
+             //   ParticlesCount = 2000,
               //  SpeedMin = 10,
               //  SpeedMax = 10,
                 ColorFrom = Color.Gold,
@@ -38,7 +39,7 @@ namespace Kursovaya
                 X = picDisplay.Width / 2,
                 Y = picDisplay.Height / 2,
             };
-
+            /*
             emitters.Add(this.emitter);
 
             // привязываем гравитоны к полям
@@ -55,7 +56,7 @@ namespace Kursovaya
 
             // привязываем поля к эмиттеру
             emitter.impactPoints.Add(point1);
-            emitter.impactPoints.Add(point2);
+            emitter.impactPoints.Add(point2);*/
         }
 
         private void picDisplay_Click(object sender, EventArgs e)
@@ -79,8 +80,8 @@ namespace Kursovaya
 
             picDisplay.Invalidate();
         }
-        //private int MousePositionX = 0;
-       // private int MousePositionY = 0;
+        private int MousePositionX = 0;
+        private int MousePositionY = 0;
         private void picDisplay_MouseMove(object sender, MouseEventArgs e)
         {
             // это не трогаем
@@ -91,8 +92,8 @@ namespace Kursovaya
             }
 
             // а тут передаем положение мыши, в положение гравитона
-            point2.X = e.X;
-            point2.Y = e.Y;
+            //MousePositionX.X = e.X;
+            //MousePositionY.Y = e.Y;
         }
 
         private void tbDirection_Scroll(object sender, EventArgs e)
@@ -101,7 +102,7 @@ namespace Kursovaya
             lblDirection.Text = $"{tbDirection.Value}°";
         }
 
-        private void tbGraviton1_Scroll(object sender, EventArgs e)
+     /*   private void tbGraviton1_Scroll(object sender, EventArgs e)
         {
             point1.Power = tbGraviton1.Value;
 
@@ -110,7 +111,7 @@ namespace Kursovaya
         private void tbGraviton2_Scroll(object sender, EventArgs e)
         {
             point2.Power= tbGraviton2.Value;
-        }
+        }*/
 
         private void tbSpeed_Scroll(object sender, EventArgs e)
         {
@@ -120,6 +121,16 @@ namespace Kursovaya
         private void tbSpreading_Scroll(object sender, EventArgs e)
         {
             emitter.Spreading= tbSpreading.Value;
+        }
+
+        private void tbParticlesCount_Scroll(object sender, EventArgs e)
+        {
+            emitter.ParticlesPerTick = tbParticlesCount.Value;
+        }
+
+        private void tbParticleLife_Scroll(object sender, EventArgs e)
+        {
+            emitter.Life = tbParticleLife.Value;
         }
     }
 }
